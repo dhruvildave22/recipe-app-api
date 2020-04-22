@@ -12,18 +12,20 @@ def recipe_image_file_path(instance, filename):
 
     return os.path.join('uploads/recipe/', filename)
 
-class Recipe(models.Model):
-  user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
-    )
-  title = models.CharField(max_length=255)
-  time_minutes = models.IntegerField()
-  price = models.DecimalField(max_digits=5, decimal_places=2)
-  link = models.CharField(max_length=255, blank=True, null=True)
-  ingredients = models.ManyToManyField('Ingredient', related_name='ingredient')
-  tags = models.ManyToManyField('Tag', related_name='tag')
-  image = models.ImageField(null=True, upload_to=recipe_image_file_path)
 
-  def __str__(self):
-      return self.title
+class Recipe(models.Model):
+    user = models.ForeignKey(
+          settings.AUTH_USER_MODEL,
+          on_delete=models.CASCADE
+      )
+    title = models.CharField(max_length=255)
+    time_minutes = models.IntegerField()
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    link = models.CharField(max_length=255, blank=True, null=True)
+    ingredients = models.ManyToManyField('Ingredient',
+                                         related_name='ingredient')
+    tags = models.ManyToManyField('Tag', related_name='tag')
+    image = models.ImageField(null=True, upload_to=recipe_image_file_path)
+
+    def __str__(self):
+        return self.title

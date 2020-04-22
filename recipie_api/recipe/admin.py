@@ -7,5 +7,3 @@ from recipe.models.models_recipe import Recipe
 admin.site.register(Tag)
 admin.site.register(Ingredient)
 admin.site.register(Recipe)
-
-

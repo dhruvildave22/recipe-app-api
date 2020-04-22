@@ -3,8 +3,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import gettext as _
 
 
-from core.models import User
-from recipe.models.models_tag import Tag
+from .models import User
 
 
 class UserAdmin(BaseUserAdmin):
@@ -28,13 +27,11 @@ class UserAdmin(BaseUserAdmin):
     )
 
     add_fieldsets = (
-    (None, {
-        'classes': ('wide',),
-        'fields': ('email', 'password1', 'password2')
-    }),
-)
+        (None, {
+            'classes': ('wide',),
+            'fields': ('email', 'password1', 'password2')
+        }),
+    )
 
 
 admin.site.register(User, UserAdmin)
-
-

@@ -7,6 +7,7 @@ from recipe.models.models_tag import Tag
 from recipe.serializers.serializers_ingredient import IngredientSerializer
 from recipe.serializers.serializers_tag import TagSerializer
 
+
 class RecipeSerializer(serializers.ModelSerializer):
     """Serialize a recipe"""
     ingredients = serializers.PrimaryKeyRelatedField(
@@ -30,7 +31,8 @@ class RecipeSerializer(serializers.ModelSerializer):
 class RecipeDetailSerializer(RecipeSerializer):
     ingredients = IngredientSerializer(many=True, read_only=True)
     tags = TagSerializer(many=True, read_only=True)
- 
+
+
 class RecipeImageSerializer(serializers.ModelSerializer):
     """Serializer for uploading images to recipe"""
 
