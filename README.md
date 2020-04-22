@@ -16,7 +16,7 @@ $ docker-compose run app sh -c "python manage.py migrate"
 
 at last run this command to run server
 ```
-$ docker-compose up"
+$ docker-compose up
 ```
 
 It will be starting development server at http://127.0.0.1:8000/
