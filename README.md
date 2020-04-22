@@ -12,6 +12,7 @@ $ docker build .
 $ docker-compose build
 $ docker-compose run app sh -c "python manage.py makemigrations"
 $ docker-compose run app sh -c "python manage.py migrate"
+$ docker-compose run app sh -c "python manage.py createsuperuser"
 ```
 
 at last run this command to run server
